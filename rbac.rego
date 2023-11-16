@@ -15,9 +15,8 @@ import future.keywords.in
 # 	resource.resource_id == input.resource
 # 	resource.tenant_id == input.tenant_id
 # }
-city_list := data.result
 
 allow if {
-	some my_city in city_list
+	some my_city in data.result
 	my_city.city_name == input.city_name
 }
