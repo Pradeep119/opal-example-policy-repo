@@ -6,7 +6,7 @@ import future.keywords.if
 import future.keywords.in
 
 # By default, deny requests.
-#default allow := false
+default allow := false
 
 # allow if {
 # 	some resource in data.user_resource
