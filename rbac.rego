@@ -15,8 +15,9 @@ default allow := true
 # 	resource.resource_id == input.resource
 # 	resource.tenant_id == input.tenant_id
 # }
-val := data.cities
+city_list := data.result
+
 allow if {
-	some resource in data.cities
-	resource.city_name == input.city_name
+	some my_city in city_list
+	my_city.city_name == input.city_name
 }
