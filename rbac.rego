@@ -15,7 +15,7 @@ default allow := true
 # 	resource.resource_id == input.resource
 # 	resource.tenant_id == input.tenant_id
 # }
-val := data.city
+val := data.users
 allow if {
 	some resource in data.city
 	resource.city_name == input.city_name
