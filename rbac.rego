@@ -31,7 +31,7 @@ default allow := false
 
 
 # Allow the action if the user is granted permission to perform the action.
-allow {
+allow if {
 	# Find permissions for the user.
 	some permission
 	user_is_granted[permission]
@@ -39,17 +39,9 @@ allow {
 	# Check if the permission permits the action.
 	input.action == permission.action
 	input.type == permission.type
-
-	# unless user location is outside US
-	country := data.users[input.user].location.country
-	country == "US"
 }
 
-
-
-# user_is_granted is a set of permissions for the user identified in the request.
-# The `permission` will be contained if the set `user_is_granted` for every...
-user_is_granted[permission] {
+user_is_granted contains permission if {
 	some i, j
 
 	# `role` assigned an element of the user_roles for this user...
