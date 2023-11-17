@@ -22,4 +22,4 @@ allow if {
 #	my_city.hard_city_id == input.city_id
 #	my_city.hard_country_id == input.country_id
 #}
-	
+	 
