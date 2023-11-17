@@ -17,7 +17,7 @@ default allow := false
 # }
 
 allow if {
-	some my_city in data.result.hard_cities
+	some my_city in data.hard_cities
 	my_city.hard_city_name == input.city_name
 	my_city.hard_city_id == input.city_id
 	my_city.hard_country_id == input.country_id
