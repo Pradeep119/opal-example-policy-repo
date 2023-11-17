@@ -16,38 +16,8 @@ default allow := false
 # 	resource.tenant_id == input.tenant_id
 # }
 
-#allow if {
-#	some my_city in data.result.cities
-#	my_city.city_name == input.city_name
-#}
-
-
-
-
-
-
-
-
-
-
-# Allow the action if the user is granted permission to perform the action.
 allow if {
-	# Find permissions for the user.
-	some permission
-	user_is_granted[permission]
-
-	# Check if the permission permits the action.
-	input.action == permission.action
-	input.type == permission.type
-}
-
-user_is_granted contains permission if {
-	some i, j
-
-	# `role` assigned an element of the user_roles for this user...
-	role := data.users[input.user].roles[i]
-
-	# `permission` assigned a single permission from the permissions list for 'role'...
-	permission := data.role_permissions[role][j]
+	some my_city in data.hard_cities
+	my_city.hard_city_name == input.city_name
 }
 	
