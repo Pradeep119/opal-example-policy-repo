@@ -11,9 +11,9 @@ default allow := false
 allow if {
 	some resource in data.cities
 	resource.user_id == input.user_id
-	# 	resource.action == input.action
-	# 	resource.pool_id == input.pool_id
-	# 	resource.tenant_id == input.tenant_id
+	resource.action == input.action
+	resource.pool_id == input.pool_id
+	resource.tenant_id == input.tenant_id
 }
 
 #allow if {
