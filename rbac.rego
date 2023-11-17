@@ -16,6 +16,13 @@ allow if {
 	pool_resource.pool_id == input.pool_id 
 }
 
+pool_list contains name if {
+	some pool_resource in data.cities
+	pool_resource.user_id == input.user_id
+	pool_resource.action == input.action
+        name := user_resource.pool_id
+}
+
 #allow if {
 #	some my_city in data.hard_cities
 #	my_city.hard_city_name == input.city_name
