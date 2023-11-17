@@ -17,7 +17,7 @@ default allow := false
 # }
 
 allow if {
-	some my_city in data.hard_cities
-	my_city.hard_city_name == input.city_name
+	some my_city in data.cities
+	my_city.city_name == input.city_name
 }
 	
