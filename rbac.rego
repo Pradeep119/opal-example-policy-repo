@@ -9,11 +9,11 @@ import future.keywords.in
 default allow := false
 
 allow if {
-	some pool in data.cities
-	input.tenant_id == pool.tenant_id
-	input.user_id == pool.user_id
-	input.action == pool.action
-	input.pool_id == pool.pool_id
+	some pool_resource in data.cities
+	pool_resource.tenant_id == input.tenant_id 
+	pool_resource.user_id == input.user_id 
+	pool_resource.action == input.action 
+	pool_resource.pool_id == input.pool_id 
 }
 
 # allow if {
