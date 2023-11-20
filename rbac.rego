@@ -22,7 +22,7 @@ pool_list contains name if {
 	pool_resource.action == input.action
         name := pool_resource.pool_id
 }
-
+ 
 
 #allow if {
 #	some my_city in data.hard_cities
